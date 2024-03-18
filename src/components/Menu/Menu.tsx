@@ -1,26 +1,22 @@
 import { FC } from "react";
 import styled from "styled-components";
 
-export const Menu: FC = () => {
+interface MenuPropsType {
+  items: { text: string; link: string }[];
+}
+
+export const Menu: FC<MenuPropsType> = (props) => {
+  let links = props.items.map((item, index) => {
+    return (
+      <li key={index}>
+        <a href={item.link}>{item.text}</a>
+      </li>
+    );
+  });
+
   return (
     <StyledMenu>
-      <ul>
-        <li>
-          <a href="">Home</a>
-        </li>
-        <li>
-          <a href="">Skills</a>
-        </li>
-        <li>
-          <a href="">Works</a>
-        </li>
-        <li>
-          <a href="">Testimony</a>
-        </li>
-        <li>
-          <a href="">Contact</a>
-        </li>
-      </ul>
+      <ul>{links}</ul>
     </StyledMenu>
   );
 };
@@ -28,8 +24,14 @@ export const Menu: FC = () => {
 const StyledMenu = styled.nav`
   ul {
     display: flex;
+    justify-content: center;
     gap: 30px;
 
     list-style-type: none;
+
+    li a {
+      text-decoration: none;
+      color: #7572d5;
+    }
   }
 `;
