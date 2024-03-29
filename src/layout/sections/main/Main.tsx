@@ -26,7 +26,7 @@ export default Main;
 const StyledMain = styled.div`
   min-height: 100vh;
   background-color: black;
-  color: white;
+  /* color: white; */
 `;
 
 const Photo = styled.img`

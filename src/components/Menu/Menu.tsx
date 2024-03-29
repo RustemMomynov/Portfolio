@@ -1,5 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
+import { theme } from "../../styles/Theme";
 
 interface MenuPropsType {
   items: { text: string; link: string }[];
@@ -31,7 +32,12 @@ const StyledMenu = styled.nav`
 
     li a {
       text-decoration: none;
-      color: #7572d5;
+      color: ${theme.colors.accent};
+      transition: color 0.3s;
+    }
+
+    li a:hover {
+      color: ${theme.colors.font};
     }
   }
 `;
