@@ -1,11 +1,11 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { Logo } from "../../components/logo/Logo";
-import { Menu } from "../../components/menu/Menu";
+import { Menu } from "../../components/Menu/Menu";
 import { StyledContainer } from "../../components/Container";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { theme } from "../../styles/Theme";
-import { HeaderMenu } from "../../components/menu/HeaderMenu";
+import { HeaderMenu } from "../../components/Menu/HeaderMenu";
 
 export const Header: FC = () => {
   let MenuItems = [
