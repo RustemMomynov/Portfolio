@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { StyledSectionTitle } from "../../../components/SectionTitle";
-import { Menu } from "../../../components/Menu/Menu";
+import { Menu } from "../../../components/menu/Menu";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Work } from "./work/Work";
 import photoWork1 from "./../../../assets/images/work1.png";

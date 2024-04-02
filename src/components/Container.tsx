@@ -9,5 +9,5 @@ export const StyledContainer = styled.div`
   padding: 0 15px;
   margin: 0 auto;
 
-  border: 1px solid ${theme.colors.accent};
+  /* outline: 1px solid red; */
 `;
