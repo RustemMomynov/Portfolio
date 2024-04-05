@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { theme } from "../../styles/Theme";
+import { theme } from "../../../styles/Theme";
 
 interface HeaderMenuPropsType {
   items: { text: string; link: string }[];
