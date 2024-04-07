@@ -11,6 +11,7 @@ interface FlexWrapperPropsType {
     | "space-evenly";
   align?: "stretch" | "flex-start" | "flex-end" | "center" | "baseline";
   wrap?: "nowrap" | "wrap" | "wrap-reverse";
+  gap?: string;
 }
 
 export const FlexWrapper = styled.div<FlexWrapperPropsType>`
@@ -20,4 +21,5 @@ export const FlexWrapper = styled.div<FlexWrapperPropsType>`
   align-items: ${(props) => props.align || "stretch"};
   flex-wrap: ${(props) => props.wrap || "no-wrap"};
   height: 100%;
+  gap: ${(props) => props.gap};
 `;

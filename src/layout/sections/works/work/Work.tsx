@@ -2,6 +2,7 @@ import { FC } from "react";
 import styled from "styled-components";
 import { StyledLink } from "../../../../components/Link";
 import { theme } from "../../../../styles/Theme";
+import { StyledButton } from "../../../../components/Button";
 
 interface WorkPropsType {
   imgSrc: string;
@@ -15,6 +16,7 @@ export const Work: FC<WorkPropsType> = (props) => {
     <StyledWork>
       <ImageWrapper>
         <StyledImg src={props.imgSrc} />
+        <StyledButton>view project</StyledButton>
       </ImageWrapper>
 
       <Description>
@@ -57,9 +59,23 @@ const ImageWrapper = styled.div`
     background: rgba(0, 0, 0, 0.3);
   }
 
-  :hover::after {
-    content: "123";
+  ${StyledButton} {
+    z-index: -1;
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    ::before {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  :hover {
+    ${StyledButton} {
+      z-index: 10;
+    }
   }
 `;
 
