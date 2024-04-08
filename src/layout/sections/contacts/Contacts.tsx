@@ -36,6 +36,7 @@ const StyledForm = styled.form`
 
   textarea {
     height: 155px;
+    resize: none;
   }
 
   ${StyledButton} {
@@ -45,7 +46,7 @@ const StyledForm = styled.form`
 
 const StyledField = styled.input`
   width: 100%;
-  border: 1px solid ${theme.colors.primaryBg};
+  border: 1px solid ${theme.colors.borderColor};
   background-color: ${theme.colors.secondaryBg};
   padding: 7px 15px;
 
@@ -57,5 +58,9 @@ const StyledField = styled.input`
 
   ::placeholder {
     color: ${theme.colors.plaleholder};
+  }
+
+  &:focus-visible {
+    outline: 1px solid ${theme.colors.borderColor};
   }
 `;

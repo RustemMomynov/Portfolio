@@ -2,6 +2,7 @@ import { FC } from "react";
 import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
 import { FlexWrapper } from "../../components/FlexWrapper";
+import { theme } from "../../styles/Theme";
 
 interface FooterProps {}
 
@@ -61,21 +62,40 @@ export const Footer: FC<FooterProps> = () => {
 };
 
 const StyledFooter = styled.footer`
-  background-color: #000000;
+  background-color: ${theme.colors.primaryBg};
   color: white;
+  padding: 40px 0;
+`;
+
+const Name = styled.span`
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 3px;
 `;
 
 const SocialList = styled.ul`
   display: flex;
-  list-style: none;
-
-  gap: 30px;
+  /* list-style: none; */
+  gap: 20px;
+  margin: 30px 0;
 `;
 
 const SocialItem = styled.li``;
 
-const Name = styled.span``;
+const SocialLink = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-const SocialLink = styled.a``;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+`;
 
-const Copyright = styled.small``;
+const Copyright = styled.small`
+  font-size: 12px;
+  line-height: 18px;
+  opacity: 0.5;
+`;
