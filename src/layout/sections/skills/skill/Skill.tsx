@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Icon } from "../../../../components/icon/Icon";
 import styled from "styled-components";
 import { FlexWrapper } from "../../../../components/FlexWrapper";
+import { theme } from "../../../../styles/Theme";
 
 interface SkillProps {
   iconId: string;
@@ -25,12 +26,19 @@ export const Skill: FC<SkillProps> = (props) => {
 
 const StyledSkill = styled.div`
   width: 380px;
-  padding: 62px 20px 40px;
+  flex-grow: 1;
+  padding: 42px 20px 52px;
+
+  @media ${theme.media.mobile} {
+    padding: 62px 0 40px;
+  }
 `;
 
 export const IconWrapper = styled.div`
   position: relative;
   z-index: 0;
+
+  color: ${theme.colors.accent};
 
   ::before {
     position: absolute;

@@ -7,6 +7,7 @@ import photoWork1 from "./../../../assets/images/work1.png";
 import photoWork2 from "./../../../assets/images/work2.png";
 import { StyledContainer } from "../../../components/Container";
 import { TabMenu } from "./tabMenu/TabMenu";
+import { theme } from "../../../styles/Theme";
 
 interface WorksProps {}
 
@@ -23,7 +24,7 @@ export const Works: FC<WorksProps> = () => {
       <StyledContainer>
         <StyledSectionTitle>My Works</StyledSectionTitle>
         <TabMenu items={MenuItems} />
-        <FlexWrapper justify={"space-between"} align={"flex-start"}>
+        <FlexWrapper justify={"space-between"} align={"flex-start"} wrap="wrap">
           <Work
             imgSrc={photoWork1}
             title="Social Network"
@@ -42,4 +43,12 @@ export const Works: FC<WorksProps> = () => {
   );
 };
 
-const StyledWorks = styled.section``;
+const StyledWorks = styled.section`
+  ${FlexWrapper} {
+    gap: 30px;
+
+    @media ${theme.media.tablet} {
+      justify-content: center;
+    }
+  }
+`;

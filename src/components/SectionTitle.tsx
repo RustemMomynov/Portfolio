@@ -1,12 +1,18 @@
 import styled from "styled-components";
 import { theme } from "../styles/Theme";
+import { getFont } from "../styles/Common";
 
 export const StyledSectionTitle = styled.h2`
   position: relative;
   text-align: center;
-  font-family: "Josefin Sans" sans-serif;
-  font-weight: 600;
-  font-size: 36px;
+
+  ${getFont({
+    family: "'Josefin Sans' sans-serif",
+    Fmax: 36,
+    Fmin: 30,
+    weight: 600,
+  })}
+
   letter-spacing: 5px;
   margin-bottom: 90px;
 
@@ -21,5 +27,9 @@ export const StyledSectionTitle = styled.h2`
     width: 55px;
     height: 1px;
     background-color: ${theme.colors.accent};
+
+    @media ${theme.media.tablet} {
+      bottom: -24px;
+    }
   }
 `;

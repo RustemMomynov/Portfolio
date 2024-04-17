@@ -4,7 +4,9 @@ import { Logo } from "../../components/logo/Logo";
 import { StyledContainer } from "../../components/Container";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { theme } from "../../styles/Theme";
-import { HeaderMenu } from "./menu/HeaderMenu";
+import { DesktopMenu } from "./desktopMenu/DesktopMenu";
+import { MobileMenu } from "./mobileMenu/MobileMenu";
+import { S } from "./Header_Styles";
 
 export const Header: FC = () => {
   let MenuItems = [
@@ -16,25 +18,14 @@ export const Header: FC = () => {
   ];
 
   return (
-    <StyledHeader>
+    <S.Header>
       <StyledContainer>
         <FlexWrapper justify="space-between" align="center">
           <Logo />
-          <HeaderMenu items={MenuItems} />
+          <DesktopMenu items={MenuItems} />
+          <MobileMenu items={MenuItems} />
         </FlexWrapper>
       </StyledContainer>
-    </StyledHeader>
+    </S.Header>
   );
 };
-
-const StyledHeader = styled.header`
-  background-color: ${theme.colors.secondaryBg};
-
-  padding: 20px 0;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99999;
-`;

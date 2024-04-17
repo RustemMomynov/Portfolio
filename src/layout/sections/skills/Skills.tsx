@@ -12,7 +12,7 @@ export const Skills: FC<SkillsProps> = () => {
     <StyledSkills>
       <StyledContainer>
         <StyledSectionTitle>My Skills</StyledSectionTitle>
-        <FlexWrapper wrap="wrap" justify="space-between">
+        <FlexWrapper wrap="wrap" justify="space-around">
           <Skill
             iconId="html"
             title="HTML5"

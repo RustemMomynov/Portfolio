@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { theme } from "../../styles/Theme";
+import { getFont } from "../../styles/Common";
 
 interface FooterProps {}
 
@@ -68,10 +69,18 @@ const StyledFooter = styled.footer`
 `;
 
 const Name = styled.span`
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 22px;
-  font-weight: 700;
+  ${getFont({
+    Fmax: 22,
+    Fmin: 16,
+    family: "'Josefin Sans', sans-serif",
+    weight: 700,
+  })}
+
   letter-spacing: 3px;
+
+  @media ${theme.media.mobile} {
+    font-size: 16px;
+  }
 `;
 
 const SocialList = styled.ul`
@@ -92,6 +101,16 @@ const SocialLink = styled.a`
   border-radius: 50%;
   width: 35px;
   height: 35px;
+
+  color: ${theme.colors.accent};
+
+  transition: transform 0.5s;
+
+  :hover {
+    background-color: ${theme.colors.accent};
+    color: ${theme.colors.primaryBg};
+    transform: translateY(-4px);
+  }
 `;
 
 const Copyright = styled.small`

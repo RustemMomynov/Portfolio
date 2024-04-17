@@ -31,9 +31,8 @@ export const Work: FC<WorkPropsType> = (props) => {
 
 const StyledWork = styled.div`
   background-color: ${theme.colors.secondaryBg};
-
-  max-width: 540px;
-  width: 100%;
+  width: 330px;
+  flex-grow: 1;
 
   ${StyledLink} {
     padding: 10px 0;
@@ -41,12 +40,31 @@ const StyledWork = styled.div`
       margin-left: 20px;
     }
   }
+
+  @media ${theme.media.desktop} {
+    /* max-width: 540px; */
+  }
 `;
 
 const ImageWrapper = styled.div`
   position: relative;
 
-  :hover::before {
+  ${StyledButton} {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    ::before {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  ::before {
+    opacity: 0;
+
     content: "";
     position: absolute;
 
@@ -59,22 +77,19 @@ const ImageWrapper = styled.div`
     background: rgba(0, 0, 0, 0.3);
   }
 
-  ${StyledButton} {
-    z-index: -1;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
+  :hover {
+    ${StyledButton} {
+      opacity: 1;
+    }
 
-    ::before {
-      width: 100%;
-      height: 100%;
+    :before {
+      opacity: 1;
     }
   }
 
-  :hover {
-    ${StyledButton} {
-      z-index: 10;
+  @media ${theme.media.tablet} {
+    ${StyledButton}, ::before {
+      opacity: 1;
     }
   }
 `;

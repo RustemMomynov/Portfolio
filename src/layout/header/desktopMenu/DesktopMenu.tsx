@@ -2,11 +2,11 @@ import { FC } from "react";
 import styled from "styled-components";
 import { theme } from "../../../styles/Theme";
 
-interface HeaderMenuPropsType {
+interface DesktopMenuPropsType {
   items: { text: string; link: string }[];
 }
 
-export const HeaderMenu: FC<HeaderMenuPropsType> = (props) => {
+export const DesktopMenu: FC<DesktopMenuPropsType> = (props) => {
   let links = props.items.map((item, index) => {
     return (
       <ListItem key={index}>
@@ -24,17 +24,21 @@ export const HeaderMenu: FC<HeaderMenuPropsType> = (props) => {
   });
 
   return (
-    <StyledHeaderMenu>
+    <StyledDesktopMenu>
       <ul>{links}</ul>
-    </StyledHeaderMenu>
+    </StyledDesktopMenu>
   );
 };
 
-const StyledHeaderMenu = styled.nav`
+const StyledDesktopMenu = styled.nav`
   ul {
     display: flex;
     justify-content: center;
     gap: 30px;
+  }
+
+  @media ${theme.media.tablet} {
+    display: none;
   }
 `;
 

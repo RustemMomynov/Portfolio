@@ -25,11 +25,13 @@ export const TabMenu: FC<TabMenuPropsType> = (props) => {
 const StyledTabMenu = styled.nav`
   ul {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 40px;
+    justify-content: space-between;
+
+    margin: 0 auto 40px;
 
     list-style-type: none;
+    max-width: 352px;
+    width: 100%;
   }
 `;
 
